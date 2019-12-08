@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.css" integrity="sha256-SHMGCYmST46SoyGgo4YR/9AlK1vf3ff84Aq9yK4hdqM=" crossorigin="anonymous">
+                <title>World map place identification</title>
+            </head>
+            <style>
+                
+                a{
+        color:white;
+        padding: 5px;
+        text-decoration:none;
+        height:30px ;
+        /* width: 20px; */
+        display: inline-block;
+        background: green;
+    }
+    a:hover{
+        color: orange;
+        z-index: 1;
+    }
+    ul{
+        list-style: none;
+        padding:5px;
+        margin: 0;
+        background: rgb(61, 49, 49);
+        /* position: absolute; */
+        opacity: 0.8;
+        /*height: 30px;*/
+      }
+      li{
+        display: inline-block;
+        color: black;   
+    }
+            </style>
+            <body>
+                    <header>
+                            <ul>
+                                    <li>
+                                            <h2>Eric's geo-location</h2>
+                                    </li>
+                                    <li style="float: right;">
+                                        <a href="home.html">Home</a>
+                                        <a href="about.html">about</a>
+                                
+                                    </li>
+                                </ul>
+
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div id="accidents" class="w-100 my-3 leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" style="height: calc(100vh - 2rem); position: relative; outline: none;" tabindex="0"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, -150px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 17; transform: translate3d(501px, 237px, 0px) scale(0.5);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(334px, 158px, 0px) scale(1);"><img alt="" role="presentation" src="http://a.tile.openstreetmap.org/2/2/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(248px, -93px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://b.tile.openstreetmap.org/2/2/2.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(248px, 163px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://c.tile.openstreetmap.org/2/1/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-8px, -93px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://b.tile.openstreetmap.org/2/3/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(504px, -93px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://a.tile.openstreetmap.org/2/1/2.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-8px, 163px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://c.tile.openstreetmap.org/2/3/2.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(504px, 163px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://b.tile.openstreetmap.org/2/0/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-264px, -93px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://c.tile.openstreetmap.org/2/0/2.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-264px, 163px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://b.tile.openstreetmap.org/2/3/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-520px, -93px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://b.tile.openstreetmap.org/2/0/1.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(760px, -93px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://c.tile.openstreetmap.org/2/3/2.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-520px, 163px, 0px); opacity: 1;"><img alt="" role="presentation" src="http://c.tile.openstreetmap.org/2/0/2.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(760px, 163px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"><img src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(687px, 320px, 0px);"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"><img src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/images/marker-icon.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(687px, 320px, 0px); z-index: 320;"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(598px, 506.5px, 0px) scale(2);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"><div class="leaflet-control-layers leaflet-control" aria-haspopup="true"><a class="leaflet-control-layers-toggle" href="#" title="Layers"></a><section class="leaflet-control-layers-list"><div class="leaflet-control-layers-base"><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers_27" checked="checked"><span> OSM</span></div></label><label><div><input type="radio" class="leaflet-control-layers-selector" name="leaflet-base-layers_27"><span> Google Streets</span></div></label></div><div class="leaflet-control-layers-separator"></div><div class="leaflet-control-layers-overlays"><label><div><input type="checkbox" class="leaflet-control-layers-selector" checked=""><span> example</span></div></label></div></section></div></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a></div></div></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.5.1/leaflet.js"></script>
+                    <script>
+                        let mapOptions = {
+                            center: [-33.8950,18.4000],
+                            zoom: 5
+                        };
+                    
+                        let accidents = new L.map('accidents', mapOptions);
+                    
+                        let basemaps = {
+                            'OSM' : L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'),
+                    
+                            'Google Streets' : L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+                                maxZoom: 20,
+                                subdomains:['mt0','mt1','mt2','mt3']
+                            })
+                    
+                        };
+                    
+                        let  thematicLayers = {
+                            'example' : L.layerGroup(),
+                        };
+                    
+                        L.control.layers(basemaps, thematicLayers).addTo(accidents);
+                        basemaps.OSM.addTo(accidents);
+                        thematicLayers.example.addTo(accidents);
+                        thematicLayers.example.addLayer(L.marker([-33.9350,18.393]).bindPopup('Cape Town'))
+                    </script>
+                    
+                    </body>
+</html>
