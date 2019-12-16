@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+    <title>Counties Population map</title>
+   <style>
+       body{
+           margin:0;
+           padding:0;
+       }
+      h2{
+        color: aqua;
+        margin: 0%;
+        display: inline-block;
+    }
+    #map {
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+       
+      }
+    a{
+        color:white;
+        padding: 5px;
+        text-decoration:none;
+        height:20px ;
+        /* width: 20px; */
+        display: inline-block;
+        background: green;
+    }
+    a:hover{
+        color: orange;
+        z-index: 1;
+    }
+    ul{
+        list-style: none;
+        padding:5px;
+        margin: 0;
+        background: #222;
+        /* position: absolute; */
+        opacity: 0.9;
+        /*height: 30px;*/
+     
+        
+        
+    }
+    li{
+        display: inline-block;
+       
+        
+    }
+    
+    body{
+        margin: 02;
+    }</style>
+</head>
+<body>
+<header>
+        <ul>
+                <li>
+                        <h2>Eric Mogesa</h2>
+                </li>
+                <li style="float: right;">
+                  <a href="index.html">Home</a>
+                  <a href="geo-location.html">Map</a>
+                  <a href="about.html">About</a>
+              </li>
+            </ul>
+</header>
+<div>
+   
+    <div id="map" class="leaflet-container leaflet-fade-anim leaflet-grab leaflet-touch-drag" tabindex="0" style="outline: none;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, -150px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 17; transform: translate3d(-2201px, -1181px, 0px) scale(2);"></div><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(-225px, -271px, 0px) scale(1);"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/308/254.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(620px, 326px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/309/254.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(876px, 326px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/308/255.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(620px, 582px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/309/255.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(876px, 582px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/307/254.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(364px, 326px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/310/254.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1132px, 326px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/307/255.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(364px, 582px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/310/255.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1132px, 582px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/306/254.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(108px, 326px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/311/254.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1388px, 326px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/306/255.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(108px, 582px, 0px); opacity: 1;"><img alt="" role="presentation" src="https://api.tiles.mapbox.com/v4/mapbox.streets/9/311/255.png?access_token=pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1388px, 582px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-overlay-pane"></div><div class="leaflet-pane leaflet-marker-pane"></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(79136px, 65300.5px, 0px) scale(256);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a><a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> | Map data © <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a></div></div></div></div>
+  <!-- <div class="sidebar">
+    <div>
+      <p>County</p>
+      <input type="text" name="county" id="county" value="">
+    </div>
+    <div>
+      <p>Population</p>
+      <input type="text" name="population" id="pop" value="">
+    </div>
+  </div> -->
+
+  <script>
+    // import geojson from "./county.geojson";
+    var position = [0.614058, 37.862076];
+    var mymap = L.map("map", {
+      center: position,
+      zoom: 7,
+      zoomControl: false,
+      maxZoom: 10,
+      minZoom: 1,
+      scrollwheel: false,
+      legends: true,
+      infoControl: false,
+      attributionControl: true
+    });
+    const county = document.getElementById("county");
+    const population = document.getElementById("pop");
+
+    L.tileLayer(
+      "https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}",
+      // "http://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}.png",
+
+      {
+        attribution:
+          'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        id: "mapbox.streets",
+        accessToken:
+          "pk.eyJ1IjoiZXZhbnNrYXJhbmphIiwiYSI6ImNqdm5yNjF6ODFsaWk0OXJ0NzhwcXF1NHYifQ.LlDfnOCws33cmI5NmYh3nA"
+      }
+    ).addTo(mymap);
+    const el = `<div><p>County</p><input type="text" name="county" id="county" value="" /></div><div><p>Population</p><input type="text" name="population" id="pop" value="34122" /></div></div>`;
+    function highlight(layer) {
+      population.value = layer.feature.properties.total_pop2019;
+      county.value = layer.feature.properties.Name;
+    }
+
+    function onEachFeature(feature, layer) {
+      // does this feature have a property named popupContent?
+     if (feature.properties && feature.properties.Name) {
+        layer.bindPopup("<h3>County: </h3>"+feature.properties.Name+"<br><p>Population:</p>"+feature.properties.total_pop2019);
+    }
+      }
+    
+
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", "ke-counties.geojson");
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.responseType = "json";
+    xhr.onload = function() {
+      if (xhr.status !== 200) return xhr.response;
+
+      L.geoJSON(xhr.response, {
+        onEachFeature: onEachFeature,
+        style:{
+          fillOpacity:0,
+          color:"black",
+          dashArray:"false",
+          weight:"3"
+        }
+      }).addTo(mymap);
+    };
+    xhr.send();
+
+  </script>
+</div>
+</body>
+</html>
+
+
+
+
+
